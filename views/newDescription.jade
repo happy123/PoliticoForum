@@ -2,7 +2,8 @@ extends layout
 
 block content  
   nav.navbar.navbar-default
-    a.navbar-brand MenloPolitico
+    a.navbar-brand(href="/profile") MenloPolitico
+    a.btn.btn-info.navbar-btn.pull-right(href="/logout") Sign out
     
     p.navbar-text.pull-right Signed in as 
         a.navbar-link= user.name

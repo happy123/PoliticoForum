@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var utils = require('./utils');
 
 /* GET home page. */
 
-router.get('/', function(req, res) {
+router.get('/', utils.jumpToProfile, function(req, res) {
   res.render('index', { title: 'Express!!!!!!' });
 });
 

@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var utils = require('./utils');
 
 module.exports = function(db) {
-  router.get('/new', function(req, res) {
+  router.get('/new', utils.ensureAuthenticated, function(req, res) {
     res.render('createTopic', { title: 'Express!!!!!!' });
   });
 
@@ -14,7 +15,7 @@ module.exports = function(db) {
     });
   });
 
-  router.get('/:topicId', function(req, res, next) {
+  router.get('/:topicId', utils.ensureAuthenticated, function(req, res, next) {
     try {
       var topicId = parseInt(req.params.topicId);
     } catch (err) {
@@ -30,7 +31,6 @@ module.exports = function(db) {
             if (comments) {
               context.comments = comments;
             }
-            console.log(context);
             res.render('newDescription', context);
         })
       } else {
