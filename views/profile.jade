@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  nav.navbar.navbar-default
+    a.navbar-brand MenloPolitico
+    a.btn.btn-info.navbar-btn(href="/topics/new") Create Topic
+    
+    p.navbar-text.pull-right Signed in as 
+        a.navbar-link= user.name
+
+  h1= title
+  p Welcome to #{user.email}
+  
+  each topic in topics
+    a(href="/topics/#{topic.id}")
+      div.panel.panel-primary
+        div.panel-heading= topic.title
+        div.panel-body= topic.description
+    
+  //- div.panel.panel-primary
+  //-   div.panel-body What do we think about the new republican Health Care Plan?
+  //- div.panel.panel-primary
+  //-   div.panel-body Works  

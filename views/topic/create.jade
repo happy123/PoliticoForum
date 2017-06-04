@@ -1,0 +1,17 @@
+form.form-horizontal(method="POST", action="create")
+  fieldset
+    //- legend Create New Topic
+    .form-group
+      label.col-lg-4.control-label(for='createTopic') Topic
+      .col-lg-4
+        input#createTopic.form-control(name='title', type='text', placeholder='Topic')
+    .form-group
+      label.col-lg-4.control-label(for='textArea') Description
+      .col-lg-4
+        textarea#textArea.form-control(name='description', rows='3')
+        span.help-block
+          //- | A longer block of help text that breaks onto a new line and may extend beyond one line.
+    .form-group
+      .col-lg-10.col-lg-offset-4
+        button.btn.btn-default(type='reset') Cancel
+        button.btn.btn-primary(type='submit') Submit

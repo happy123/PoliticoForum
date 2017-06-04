@@ -1,5 +1,20 @@
 extends layout
 
+block css
+  link(rel='stylesheet', href='/css/index.css')
+  link(rel="stylesheet" href="http://localhost:3000/components/bootstrap/dist/css/bootstrap.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+  nav.navbar.navbar-default
+    a.navbar-brand MenloPolitico
+    a.btn.btn-info.navbar-btn(href="/auth/google") Sign in 
+
+    p.navbar-text.pull-right Not Signed In
+  
+  #welcome
+  // img(src='/img/homeImage.jpeg' alt='image' style='width:500;height:500')
+
+
+  
+  
+    

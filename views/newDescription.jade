@@ -1,0 +1,15 @@
+extends layout
+
+block content  
+  nav.navbar.navbar-default
+    a.navbar-brand MenloPolitico
+    
+    p.navbar-text.pull-right Signed in as 
+        a.navbar-link= user.name
+        
+  p= topic.title
+  div.panel.panel-primary
+    div.panel-body= topic.description
+  
+  include comment/create
+  include comment/view
